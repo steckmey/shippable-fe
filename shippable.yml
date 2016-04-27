@@ -1,0 +1,16 @@
+language: python
+
+python:
+  - 2.7
+
+build:
+    post_ci:
+      - docker build -t 572384241454.dkr.ecr.us-east-1.amazonaws.com/ecs-demo-signup:$BRANCH.$BUILD_NUMBER .
+
+    push:
+      - docker push 572384241454.dkr.ecr.us-east-1.amazonaws.com/ecs-demo-signup:$BRANCH.$BUILD_NUMBER
+
+integrations:
+    hub:
+      - integrationName: "Amazon ECR"
+        type: ecr
