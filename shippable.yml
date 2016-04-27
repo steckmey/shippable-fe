@@ -5,12 +5,12 @@ python:
 
 build:
     post_ci:
-      - docker build -t 572384241454.dkr.ecr.us-east-1.amazonaws.com/ecs-demo-signup:$BRANCH.$BUILD_NUMBER .
+      - docker build -t 005505311400.dkr.ecr.us-east-1.amazonaws.com/shippable-fe:$BRANCH.$BUILD_NUMBER .
 
     push:
-      - docker push 572384241454.dkr.ecr.us-east-1.amazonaws.com/ecs-demo-signup:$BRANCH.$BUILD_NUMBER
+      - docker push 005505311400.dkr.ecr.us-east-1.amazonaws.com/shippable-fe:$BRANCH.$BUILD_NUMBER
 
 integrations:
     hub:
-      - integrationName: "Amazon ECR"
+      - integrationName: "ECR"
         type: ecr
